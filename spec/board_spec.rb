@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 require 'board'
 
 describe Board do
@@ -16,31 +14,20 @@ describe Board do
     expect(board.board).to eq(grid)
   end
 
-  describe '.open_space?' do
-    it 'returns true for an empty space' do
-      result = board.open_space?(0, 1)
-
-      expect(result).to eq true
-    end
-
-    it 'returns false for a full space' do
-      result = board.open_space?(0, 0)
-
-      expect(result).to eq false
-    end
-  end
-
-  describe '.has_neighbor?' do
-    it 'returns false for an empty board' do
-      result = board.has_neighbor?(2, 2)
-
-      expect(result).to eq false
-    end
-
-    it 'returns true for a spot with a filled neighbor' do
-      result = board.has_neighbor?(0, 1)
-
-      expect(result).to eq true
+  describe '.place_move' do
+    [
+      [2, 0, 1]
+    ].each do |x, y, marker|
+      it 'returns a board with a ship segment placed' do
+        grid = [
+          [0, 0, 0, 0, 0, 0],
+          [0, 0, 0, 0, 0, 0],
+          [1, 0, 0, 0, 0, 0],
+          [0, 0, 0, 0, 0, 0],
+          [0, 0, 0, 0, 0, 0]
+        ]
+        expect(board.place_move(x, y, marker)).to eq(grid)
+      end
     end
   end
 end
