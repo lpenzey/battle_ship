@@ -1,7 +1,20 @@
+# frozen_string_literal: true
+
 require 'board'
 
 describe Board do
   let (:board) { Board.new }
+
+  it 'returns a blank board' do
+    grid = [
+      [0, 0, 0, 0, 0, 0],
+      [0, 0, 0, 0, 0, 0],
+      [0, 0, 0, 0, 0, 0],
+      [0, 0, 0, 0, 0, 0],
+      [0, 0, 0, 0, 0, 0]
+    ]
+    expect(board.board).to eq(grid)
+  end
 
   describe '.open_space?' do
     it 'returns true for an empty space' do
