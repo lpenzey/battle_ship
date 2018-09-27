@@ -5,8 +5,8 @@ class Board
     @board = Array.new(height, 0) { Array.new(width, 0) }
   end
 
-  def place_move(x, y, marker)
-    @board[x][y] = marker
-    @board
+  def show_board
+    p @board
   end
+  
 end

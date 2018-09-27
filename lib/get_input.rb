@@ -8,7 +8,8 @@ class GetInput
     spot = $stdin.gets.chomp.split(//)
     x = @board_width_keys[spot[0]]
     y = @board_height_keys[spot[1]]
-    [x, y]
+    start_coordinates = [x, y]
+    direction = $stdin.gets.chomp.split(//)
   end
 
   def place_ship(size)
