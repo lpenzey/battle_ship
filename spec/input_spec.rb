@@ -1,8 +1,8 @@
-require 'get_input'
+require 'input'
 require 'stringio'
 
-describe GetInput do
-  let (:human) { GetInput.new }
+describe Input do
+  let (:human) { Input.new }
 
   describe '.get_ship_coordinate' do
     before do
@@ -13,7 +13,7 @@ describe GetInput do
       $stdin = STDIN
     end
 
-    xit 'returns x and y coordinates from a string' do
+    it 'returns x and y coordinates from a string' do
       result = human.get_ship_coordinate
 
       expect(result).to eq([0, 0])
